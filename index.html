@@ -124,8 +124,8 @@
     border-bottom-color:var(--bg); 
     font-weight:bold; 
   }
-  .panel { display:none; padding:18px 6px; }
-  .panel[aria-hidden="false"] { display:block; }
+ .panel { display:block; padding:18px 6px; }
+ .panel[hidden] { display:none; }
   .hero { display:grid; grid-template-columns: 180px 1fr; gap:24px; padding:24px 0 0; }
   .headshot { width:180px; height:180px; border-radius:50%; object-fit:cover; border:1px solid var(--border); }
   h1 { margin:0 0 6px; font-size:34px; line-height:1.2; }
@@ -163,11 +163,11 @@
         <button role="tab" aria-selected="false" aria-controls="contact" id="tab-contact">Contact</button>
       </div>
 
-      <section <section id="about" class="panel" role="tabpanel" aria-labelledby="tab-about" aria-hidden="false">
+      <section id="about" class="panel" role="tabpanel" aria-labelledby="tab-about">
   <h2>About</h2>
   <p>Daniel Barrios writes about migration, memory, and the small ways people hold themselves together. His fiction has appeared in <em>Pleiades</em>, <em>The Brooklyn Review</em>, <em>Action-Spectacle</em>, and <em>Querencia Press</em>, with work that moves between wit and ache, the ordinary and the uncanny. He was a 2022 Under the Volcano Fellow and a 2024 Periplus Fellow, and continues to build stories rooted in Caribbean heritage and everyday survival.</p>
 
-      <section id="writing" class="panel" role="tabpanel" aria-labelledby="tab-writing" aria-hidden="true">
+      <section id="writing" class="panel" role="tabpanel" aria-labelledby="tab-writing" hidden>
   <h2>Writing</h2>
   <p class="lede">
     Stories about migration, memory, and the small ways people hold themselves together.
@@ -227,7 +227,7 @@
   </div>
       </section>
 
-      <section id="honors" class="panel" role="tabpanel" aria-labelledby="tab-honors" aria-hidden="true">
+     <section id="honors" class="panel" role="tabpanel" aria-labelledby="tab-honors" hidden>
   <h2>Fellowships &amp; Residencies</h2>
   <ul>
     <li><a href="https://lithub.com/announcing-the-2024-class-of-periplus-fellows/" target="_blank" rel="noopener">Periplus Fellow (2024)</a></li>
@@ -237,13 +237,13 @@
   </ul>
       </section>
 
-      <section id="teaching" class="panel" role="tabpanel" aria-labelledby="tab-teaching" aria-hidden="true">
+      <section id="teaching" class="panel" role="tabpanel" aria-labelledby="tab-teaching" hidden>
         <h2>Teaching</h2>
         <p>Barrios has teaching experience ranging from K–12, with recent appointments at Kean University and Hostos Community College (CUNY) as an English Adjunct Professor.</p>
         <p>Student feedback: <a href="https://www.ratemyprofessors.com/professor/2940908" target="_blank" rel="noopener">RateMyProfessors profile</a>.</p>
       </section>
 
-      <section id="contact" class="panel" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
+      <section id="contact" class="panel" role="tabpanel" aria-labelledby="tab-contact" hidden>
         <h2>Contact</h2>
         <p>Social: <a href="https://instagram.com/pastelesaregood" target="_blank" rel="noopener">Instagram @pastelesaregood</a> · <a href="https://x.com/pastelesaregood" target="_blank" rel="noopener">X/Twitter @pastelesaregood</a></p>
       </section>
