@@ -256,19 +256,21 @@
   </div>
 
 <script>
- // Simple tabs controller
+ // Simple, accessible tabs
   const tabs   = document.querySelectorAll('[role="tab"]');
-  const panels = document.querySelectorAll('.panel');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
 
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // unset current state
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // reset all
       tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
       panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
 
-      // set new state
-      btn.setAttribute('aria-selected', 'true');
-      const target = btn.getAttribute('aria-controls'); // e.g., "writing"
-      const panel  = document.getElementById(target);
+      // activate clicked tab
+      tab.setAttribute('aria-selected', 'true');
+      const id = tab.getAttribute('aria-controls'); // e.g., "writing"
+      const panel = document.getElementById(id);
       if (panel) panel.setAttribute('aria-hidden', 'false');
     });
+  });
+</script>
