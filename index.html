@@ -52,6 +52,25 @@
   }
 ]
  <style>
+  .lede { margin: 6px 0 18px; color: var(--muted); }
+
+.folio { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 680px) { .folio { grid-template-columns: 1fr 1fr; } }
+
+.card { border: 1px solid var(--border); border-radius: 8px; padding: 14px 14px 12px; background: #fff; }
+.card-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.card .work { margin:0; font-size:18px; line-height:1.2; }
+.card .venue { color:var(--muted); font-size:13px; white-space:nowrap; }
+.card .blurb { margin:8px 0 12px; }
+
+.actions { display:flex; gap:8px; }
+.btn, .ghost, .actions button {
+  font: inherit; line-height:1; padding:8px 10px; border-radius:6px; cursor:pointer; text-decoration:none;
+}
+.btn { background: var(--ink); color:#fff; border:1px solid var(--ink); }
+.btn:hover { filter: brightness(0.95); }
+.ghost { background:#fff; color:var(--ink); border:1px solid var(--border); }
+.ghost[disabled] { opacity:0.5; cursor:not-allowed; }
  .pub { margin: 20px 0 28px; }
 .pub .t { margin: 0 0 2px; font-size: 18px; }
 .pub .meta { color: var(--muted); margin: 0 0 8px; }
@@ -129,35 +148,62 @@
 
       <section id="writing" class="panel" role="tabpanel" aria-labelledby="tab-writing" aria-hidden="true">
   <h2>Writing</h2>
+  <p class="lede">
+    Stories about migration, memory, and the small ways people hold themselves together.
+  </p>
 
-  <article class="pub">
-    <h3 class="t">“Neighbors”</h3>
-    <p class="meta"><em>Action-Spectacle</em> — Summer 2024</p>
-    <p class="blurb">A sharp, intimate story about proximity and the small violences we overlook.</p>
-    <p><a href="https://www.action-spectacle.com/summer-2024-part-ii/barrios" target="_blank" rel="noopener">Read at <em>Action-Spectacle</em> →</a></p>
-  </article>
+  <div class="folio">
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="card-head">
+        <h3 class="work">“Neighbors”</h3>
+        <span class="venue">Action-Spectacle · Summer&nbsp;2024</span>
+      </div>
+      <p class="blurb">A tight, intimate story about proximity and the small violences we overlook.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.action-spectacle.com/summer-2024-part-ii/barrios" target="_blank" rel="noopener">Read</a>
+        <a class="ghost" href="https://www.action-spectacle.com/summer-2024-part-ii/barrios" target="_blank" rel="noopener" aria-label="Share Neighbors">Share</a>
+      </div>
+    </article>
 
-  <article class="pub">
-    <h3 class="t">“A Good Impression”</h3>
-    <p class="meta"><em>The Brooklyn Review</em> — 2024 • Winner, Fiction Contest</p>
-    <p class="blurb">Winner of <em>The Brooklyn Review</em> “This Time It’s Personal!” fiction contest.</p>
-    <p><a href="https://thebrooklynreview.com/2024/02/09/a-good-impression-daniel-barrios/" target="_blank" rel="noopener">Read at <em>The Brooklyn Review</em> →</a></p>
-  </article>
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="card-head">
+        <h3 class="work">“A Good Impression”</h3>
+        <span class="venue">The Brooklyn Review · 2024</span>
+      </div>
+      <p class="blurb">Winner, “This Time It’s Personal!” Fiction Contest. A story about self-presentation and the truths that leak through.</p>
+      <div class="actions">
+        <a class="btn" href="https://thebrooklynreview.com/2024/02/09/a-good-impression-daniel-barrios/" target="_blank" rel="noopener">Read</a>
+        <a class="ghost" href="https://thebrooklynreview.com/2024/02/09/a-good-impression-daniel-barrios/" target="_blank" rel="noopener" aria-label="Share A Good Impression">Share</a>
+      </div>
+    </article>
 
-  <article class="pub">
-    <h3 class="t">“The Angel and The Storm”</h3>
-    <p class="meta"><em>Querencia Press</em> — Autumn 2023 Anthology</p>
-    <p class="blurb">A piece from the fall anthology by Querencia Press.</p>
-    <p><a href="https://www.querenciapress.com/querencia-autumn-2023" target="_blank" rel="noopener">Read at <em>Querencia Press</em> →</a></p>
-  </article>
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="card-head">
+        <h3 class="work">“The Angel and The Storm”</h3>
+        <span class="venue">Querencia Press · Autumn&nbsp;2023 Anthology</span>
+      </div>
+      <p class="blurb">From the fall anthology—weather, faith, and what we carry between them.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.querenciapress.com/querencia-autumn-2023" target="_blank" rel="noopener">Read</a>
+        <a class="ghost" href="https://www.querenciapress.com/querencia-autumn-2023" target="_blank" rel="noopener" aria-label="Share The Angel and The Storm">Share</a>
+      </div>
+    </article>
 
-  <article class="pub">
-    <h3 class="t">“nobody wants to get deported”</h3>
-    <p class="meta"><em>Pleiades</em> — Fall 2024</p>
-    <p class="blurb">Story of leaving, longing, and the paper borders that cut.</p>
-    <!-- If/when you have the direct story link, drop it here. -->
-    <!-- <p><a href="YOUR_PLEIADES_STORY_URL" target="_blank" rel="noopener">Read at Pleiades →</a></p> -->
-  </article>
+    <!-- Card 4 -->
+    <article class="card">
+      <div class="card-head">
+        <h3 class="work">“nobody wants to get deported”</h3>
+        <span class="venue">Pleiades · Fall&nbsp;2024</span>
+      </div>
+      <p class="blurb">Leaving, longing, and the paper borders that cut. (Link forthcoming.)</p>
+      <div class="actions">
+        <button class="ghost" disabled title="Link coming soon">Coming soon</button>
+      </div>
+    </article>
+  </div>
       </section>
 
       <section id="honors" class="panel" role="tabpanel" aria-labelledby="tab-honors" aria-hidden="true">
