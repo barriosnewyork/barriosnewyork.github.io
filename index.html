@@ -142,6 +142,26 @@
 </style>
 </head>
 <body>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs   = document.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // reset all tabs/panels
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+
+      // activate the clicked tab + its panel
+      btn.setAttribute('aria-selected', 'true');
+      const targetId = btn.getAttribute('aria-controls');   // e.g., "writing"
+      const panel    = document.getElementById(targetId);
+      if (panel) panel.setAttribute('aria-hidden', 'false');
+    });
+  });
+});
+</script>
   <div class="wrap">
     <header>
       <div class="brand">Daniel Barrios</div>
