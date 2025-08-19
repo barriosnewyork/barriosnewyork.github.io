@@ -256,15 +256,22 @@
   </div>
 
 <script>
-const tabs = document.querySelectorAll('[role="tab"]');
-const panels = document.querySelectorAll('[role="tabpanel"]');
-function activateTab(tab) {
-  tabs.forEach(t => t.setAttribute('aria-selected', t===tab ? 'true':'false'));
-  panels.forEach(p => p.setAttribute('aria-hidden', p.id===tab.getAttribute('aria-controls')?'false':'true'));
-}
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => activateTab(tab));
-});
+ // Simple tabs controller
+  const tabs   = document.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // unset current state
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+
+      // set new state
+      btn.setAttribute('aria-selected', 'true');
+      const target = btn.getAttribute('aria-controls'); // e.g., "writing"
+      const panel  = document.getElementById(target);
+      if (panel) panel.setAttribute('aria-hidden', 'false');
+    });
 </script>
 </body>
 </html>
