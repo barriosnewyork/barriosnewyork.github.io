@@ -168,12 +168,24 @@
       gap:20px;
     }
 
+    .card-grid a{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+
     .card{
       background:var(--paper);
       border:3px solid var(--ink);
       border-radius:14px;
       overflow:hidden;
       box-shadow:8px 8px 0 rgba(0,0,0,.15);
+      transition:transform .18s ease;
+      height:100%;
+    }
+
+    .card:hover{
+      transform:translateY(-4px) rotate(.4deg);
     }
 
     .card-body{
@@ -258,18 +270,7 @@
       border-radius:16px;
       box-shadow:8px 8px 0 rgba(0,0,0,.15);
       margin-bottom:20px;
-      transform:rotate(-.4deg);
-    }
-
-    .paper-panel:nth-child(even){
-      transform:rotate(.5deg);
-    }
-
-    .book-strip{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-      margin-top:20px;
+      transform:rotate(-.2deg);
     }
 
     ul.clean{
@@ -341,7 +342,6 @@
       margin-bottom:8px;
     }
 
-    /* Floating reinita */
     .reinita-float{
       position:fixed;
       right:18px;
@@ -373,8 +373,7 @@
         grid-template-columns:1fr;
       }
 
-      .flash-grid,
-      .book-strip{
+      .flash-grid{
         grid-template-columns:1fr 1fr;
       }
 
@@ -392,8 +391,7 @@
         align-items:flex-start;
       }
 
-      .flash-grid,
-      .book-strip{
+      .flash-grid{
         grid-template-columns:1fr;
       }
 
@@ -446,37 +444,45 @@
       <h2 class="section-title">Latest Work</h2>
 
       <div class="card-grid">
-        <div class="card">
-          <img src="tendon-logo.png" alt="Tendon Magazine logo">
-          <div class="card-body">
-            <strong>Tendon Magazine</strong>
-            <h3>Let Me See Your Face</h3>
+        <a href="https://hopkinsmedicalhumanities.org/tendon-magazine/issue-8-care/let-me-see-your-face/" target="_blank" rel="noreferrer">
+          <div class="card">
+            <img src="tendon-logo.png" alt="Tendon Magazine logo">
+            <div class="card-body">
+              <strong>Tendon Magazine</strong>
+              <h3>Let Me See Your Face</h3>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div class="card">
-          <img src="drift-dribble.jpg" alt="Drift & Dribble image">
-          <div class="card-body">
-            <strong>Drift &amp; Dribble</strong>
-            <h3>Our Injuries</h3>
+        <a href="https://www.augustdriftanddribble.com/barrios.html" target="_blank" rel="noreferrer">
+          <div class="card">
+            <img src="drift-dribble.jpg" alt="Drift & Dribble image">
+            <div class="card-body">
+              <strong>Drift &amp; Dribble</strong>
+              <h3>Our Injuries</h3>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div class="card">
-          <img src="brooklyn-xray.jpg" alt="Brooklyn Review x-ray image">
-          <div class="card-body">
-            <strong>The Brooklyn Review</strong>
-            <h3>A Good Impression</h3>
+        <a href="https://thebrooklynreview.com/2024/02/09/a-good-impression-daniel-barrios/" target="_blank" rel="noreferrer">
+          <div class="card">
+            <img src="brooklyn-xray.jpg" alt="Brooklyn Review x-ray image">
+            <div class="card-body">
+              <strong>The Brooklyn Review</strong>
+              <h3>A Good Impression</h3>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div class="card">
-          <img src="assignment-logo.png" alt="Assignment Magazine logo">
-          <div class="card-body">
-            <strong>Assignment Magazine</strong>
-            <h3>My Hispanic Characters Should Be Allowed to Speak</h3>
+        <a href="https://www.assignmentmag.com/onlineonly/my-hispanic-characters-should-be-allowed-to-speak" target="_blank" rel="noreferrer">
+          <div class="card">
+            <img src="assignment-logo.png" alt="Assignment Magazine logo">
+            <div class="card-body">
+              <strong>Assignment Magazine</strong>
+              <h3>My Hispanic Characters Should Be Allowed to Speak</h3>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -493,10 +499,6 @@
         <a href="#teaching"><span class="icon">📚</span>Teaching &amp; Work</a>
         <a href="#book"><span class="icon">🦷</span>A Good Impression</a>
         <a href="#contact"><span class="icon">✉</span>Contact</a>
-      </div>
-
-      <div class="paper-panel" style="margin-top:28px;">
-        <img src="flash-hearts-bird.jpg" alt="Classic hearts and bird tattoo flash">
       </div>
     </div>
   </section>
@@ -522,14 +524,6 @@
         </div>
 
         <div class="paper-panel">
-          <img src="author-photo-2.jpg" alt="Author photo of Daniel Barrios">
-        </div>
-
-        <div class="paper-panel">
-          <img src="author-photo-3.jpg" alt="Author photo of Daniel Barrios">
-        </div>
-
-        <div class="paper-panel">
           <img src="williams-photo.jpg" alt="William Carlos Williams">
         </div>
 
@@ -546,15 +540,15 @@
         <p class="section-kicker">Archive</p>
         <h2 class="section-title">Publications</h2>
         <ul class="clean">
-          <li>Tendon Magazine</li>
-          <li>The Brooklyn Review</li>
-          <li>Drift &amp; Dribble Miscellany</li>
-          <li>Pleiades</li>
-          <li>Action-Spectacle</li>
-          <li>Forever Endeavour</li>
+          <li><a href="https://hopkinsmedicalhumanities.org/tendon-magazine/issue-8-care/let-me-see-your-face/" target="_blank" rel="noreferrer">Tendon Magazine</a></li>
+          <li><a href="https://thebrooklynreview.com/2024/02/09/a-good-impression-daniel-barrios/" target="_blank" rel="noreferrer">The Brooklyn Review</a></li>
+          <li><a href="https://www.augustdriftanddribble.com/barrios.html" target="_blank" rel="noreferrer">Drift &amp; Dribble Miscellany</a></li>
+          <li><a href="https://muse.jhu.edu/verify?url=%2Fpub%2F281%2Farticle%2F941254%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio&r=457656" target="_blank" rel="noreferrer">Pleiades</a></li>
+          <li><a href="https://www.action-spectacle.com/summer-2024-part-ii/barrios" target="_blank" rel="noreferrer">Action-Spectacle</a></li>
+          <li><a href="https://foreverendeavour.uk/2020/06/09/hormigas-no-piensan-by-daniel-barrios/" target="_blank" rel="noreferrer">Forever Endeavour</a></li>
           <li>Querencia Press</li>
           <li>Viction Magazine (forthcoming)</li>
-          <li>Assignment Magazine</li>
+          <li><a href="https://www.assignmentmag.com/onlineonly/my-hispanic-characters-should-be-allowed-to-speak" target="_blank" rel="noreferrer">Assignment Magazine</a></li>
         </ul>
       </div>
 
@@ -573,8 +567,8 @@
         <p class="section-kicker">Community</p>
         <h2 class="section-title">Fellowships &amp; Residencies</h2>
         <ul class="clean">
-          <li>PERIPLUS Collective</li>
-          <li>Under the Volcano, Tepoztlán, Mexico</li>
+          <li><a href="https://lithub.com/announcing-the-2024-class-of-periplus-fellows/" target="_blank" rel="noreferrer">PERIPLUS Collective</a></li>
+          <li><a href="https://underthevolcano.org/team/daniel-barrios/" target="_blank" rel="noreferrer">Under the Volcano, Tepoztlán, Mexico</a></li>
           <li>Sundress Academy for the Arts</li>
           <li>Martha’s Vineyard Institute of Creative Writing</li>
         </ul>
@@ -623,16 +617,6 @@
           Finalist — EastOver Prize for Debut Short Story Collections<br>
           Finalist — Black Lawrence Press Immigrant Writing Series
         </p>
-      </div>
-
-      <div class="book-strip">
-        <div class="paper-panel">
-          <img src="flash-cloud.jpg" alt="Thunder cloud tattoo flash">
-        </div>
-
-        <div class="paper-panel">
-          <img src="flash-skulls.jpg" alt="Skull stack tattoo flash">
-        </div>
       </div>
     </div>
   </section>
