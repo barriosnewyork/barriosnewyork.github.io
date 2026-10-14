@@ -36,9 +36,9 @@ img{max-width:100%;display:block}
 .site-header{padding:19px 5.5%;display:flex;align-items:center;gap:25px;justify-content:space-between;background:var(--cream);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
 .wordmark{font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;letter-spacing:-.045em;text-decoration:none;white-space:nowrap}
 .wordmark-dot{color:var(--red)}
-nav{display:flex;flex-wrap:wrap;gap:17px}
-nav a{text-decoration:none;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700}
-nav a.active{color:var(--red);text-decoration:underline;text-underline-offset:7px}
+.site-header nav{display:flex;flex-wrap:wrap;gap:17px}
+.site-header nav a{text-decoration:none;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700}
+.site-header nav a.active{color:var(--red);text-decoration:underline;text-underline-offset:7px}
 .menu-toggle{display:none;background:none;border:0;color:var(--ink)}
 main{min-height:68vh}
 
@@ -71,7 +71,7 @@ main{min-height:68vh}
 .entry h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.14rem;font-weight:400;margin:0 0 8px;line-height:1.5}
 .entry a{text-decoration-thickness:1px;text-underline-offset:4px}
 .small-note{color:var(--red);font-size:.83rem}
-.anchor-nav{display:flex;gap:22px;flex-wrap:wrap;margin:28px 0 65px}
+.anchor-nav{position:static;display:flex;gap:22px;flex-wrap:wrap;margin:28px 0 65px;padding:0;background:transparent;border:0}
 .anchor-nav a{font-size:.83rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
 .genre{scroll-margin-top:110px;margin:55px 0 70px}
 .genre h2{font-family:'Libre Baskerville',Georgia,serif;font-size:2.4rem;font-weight:400;border-bottom:2px solid var(--green);padding-bottom:15px}
@@ -123,8 +123,8 @@ main{min-height:68vh}
 
 @media(max-width:800px){
   .menu-toggle{display:block}
-  nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
-  nav.open{display:flex}
+  .site-header nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+  .site-header nav.open{display:flex}
   .shell{padding:52px 20px 75px}
   .book-panel{padding:27px}
   .teaching-line{display:block}

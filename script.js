@@ -81,7 +81,7 @@ function esc(s) {
 }
 
 function external(url, label) {
-  return url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label || 'read ↗'}</a>` : '';
+  return url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label || 'read'}</a>` : '';
 }
 
 function item(w) {
@@ -98,9 +98,8 @@ function home() {
     <div class="shell">
       <div class="home-hero hero-with-photo">
         <div>
-          <p class="kicker">fiction · poetry · nonfiction</p>
           <p class="intro">${esc(fragment)}</p>
-          <a class="arrow-link" href="#/about">read full biography ↗</a>
+          <a class="arrow-link" href="#/about">read full biography</a>
         </div>
         <figure class="home-portrait-card">
           <img src="author-closeup.jpg" alt="Close portrait of daniel barrios wearing glasses and looking toward the camera." loading="lazy">
@@ -113,13 +112,13 @@ function home() {
         <div class="featured-grid">
           ${featured.map(f => {
             const w = work.find(a => a[0] === f.title);
-            return `<article class="featured-card"><a href="${esc(w[4])}" target="_blank" rel="noopener noreferrer"><img src="${f.img}" alt="Publication artwork associated with ${esc(f.title)}" loading="lazy"></a><h3>${esc(f.title)}</h3><div class="meta">${esc(f.description)}</div><a class="more" href="${esc(w[4])}" target="_blank" rel="noopener noreferrer">view publication ↗</a></article>`;
+            return `<article class="featured-card"><a href="${esc(w[4])}" target="_blank" rel="noopener noreferrer"><img src="${f.img}" alt="Publication artwork associated with ${esc(f.title)}" loading="lazy"></a><h3>${esc(f.title)}</h3><div class="meta">${esc(f.description)}</div><a class="more" href="${esc(w[4])}" target="_blank" rel="noopener noreferrer">view publication</a></article>`;
           }).join('')}
         </div>
         <div class="link-strip">
-          <a class="arrow-link" href="#/publications#fiction">view all fiction ↗</a>
-          <a class="arrow-link" href="#/publications#poetry">view all poetry ↗</a>
-          <a class="arrow-link" href="#/publications#nonfiction">view all nonfiction ↗</a>
+          <a class="arrow-link" href="#/publications#fiction">view all fiction</a>
+          <a class="arrow-link" href="#/publications#poetry">view all poetry</a>
+          <a class="arrow-link" href="#/publications#nonfiction">view all nonfiction</a>
         </div>
       </section>
       <div class="rule"></div>
@@ -127,14 +126,14 @@ function home() {
         <p class="kicker">what's happening</p>
         <h2 class="section-title">News & updates</h2>
         ${newsCards()}
-        <p style="margin-top:35px"><a class="arrow-link" href="#/news">see all updates ↗</a></p>
+        <p style="margin-top:35px"><a class="arrow-link" href="#/news">see all updates</a></p>
       </section>
     </div>
   `;
 }
 
 function publications() {
-  return section('Publications', `<nav class="anchor-nav" aria-label="Publication genres"><a href="#/publications#fiction">fiction ↓</a><a href="#/publications#poetry">poetry ↓</a><a href="#/publications#nonfiction">nonfiction ↓</a></nav>${['fiction', 'poetry', 'nonfiction'].map(g => `<section class="genre" id="${g}"><h2>${g}</h2>${work.filter(w => w[3] === g).map(item).join('')}</section>`).join('')}`);
+  return section('Publications', `<nav class="anchor-nav" aria-label="Publication genres"><a href="#/publications#fiction">fiction</a><a href="#/publications#poetry">poetry</a><a href="#/publications#nonfiction">nonfiction</a></nav>${['fiction', 'poetry', 'nonfiction'].map(g => `<section class="genre" id="${g}"><h2>${g}</h2>${work.filter(w => w[3] === g).map(item).join('')}</section>`).join('')}`);
 }
 
 function books() {
@@ -150,11 +149,11 @@ function teaching() {
     ['St. Paul’s School of Nursing', 'Professor of English · 2023–2025']
   ];
 
-  return section('Teaching', `<h2 class="section-title">Academic appointments</h2>${jobs.map(x => `<article class="entry"><h3>${esc(x[0])}</h3><p class="meta">${esc(x[1])}</p></article>`).join('')}<div class="rule"></div><h2 class="section-title">Student reviews</h2><p class="intro">External student feedback on Rate My Professors.</p>${[['St. Paul’s School of Nursing', '2940908'], ['Hostos Community College', '3131206'], ['Kean University', '3134221']].map(x => `<article class="entry teaching-line"><h3>${esc(x[0])}</h3>${external('https://www.ratemyprofessors.com/professor/' + x[1], 'view profile ↗')}</article>`).join('')}`);
+  return section('Teaching', `<h2 class="section-title">Academic appointments</h2>${jobs.map(x => `<article class="entry"><h3>${esc(x[0])}</h3><p class="meta">${esc(x[1])}</p></article>`).join('')}<div class="rule"></div><h2 class="section-title">Student reviews</h2><p class="intro">External student feedback on Rate My Professors.</p>${[['St. Paul’s School of Nursing', '2940908'], ['Hostos Community College', '3131206'], ['Kean University', '3134221']].map(x => `<article class="entry teaching-line"><h3>${esc(x[0])}</h3>${external('https://www.ratemyprofessors.com/professor/' + x[1], 'view profile')}</article>`).join('')}`);
 }
 
 function newsCards() {
-  return `<div class="news-grid">${news.map(n => `<article class="news-card"><p class="kicker">${esc(n[1])}</p><h3>${esc(n[0])}</h3><p class="meta">${esc(n[2])}</p>${external(n[3], 'view ↗')}</article>`).join('')}</div>`;
+  return `<div class="news-grid">${news.map(n => `<article class="news-card"><p class="kicker">${esc(n[1])}</p><h3>${esc(n[0])}</h3><p class="meta">${esc(n[2])}</p>${external(n[3], 'view')}</article>`).join('')}</div>`;
 }
 
 function newsPage() {
