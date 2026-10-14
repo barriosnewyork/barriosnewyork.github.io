@@ -103,7 +103,7 @@ function home() {
           <a class="arrow-link" href="#/about">read full biography ↗</a>
         </div>
         <figure class="home-portrait-card">
-          <img src="assets/author-closeup.jpg" alt="Close portrait of daniel barrios wearing glasses and looking toward the camera." loading="lazy">
+          <img src="author-closeup.jpg" alt="Close portrait of daniel barrios wearing glasses and looking toward the camera." loading="lazy">
         </figure>
       </div>
       <div class="rule"></div>
@@ -113,7 +113,7 @@ function home() {
         <div class="featured-grid">
           ${featured.map(f => {
             const w = work.find(a => a[0] === f.title);
-            return `<article class="featured-card"><a href="${esc(w[4])}" target="_blank" rel="noopener noreferrer"><img src="assets/${f.img}" alt="Publication artwork associated with ${esc(f.title)}" loading="lazy"></a><h3>${esc(f.title)}</h3><div class="meta">${esc(f.description)}</div><a class="more" href="${esc(w[4])}" target="_blank" rel="noopener noreferrer">view publication ↗</a></article>`;
+            return `<article class="featured-card"><a href="${esc(w[4])}" target="_blank" rel="noopener noreferrer"><img src="${f.img}" alt="Publication artwork associated with ${esc(f.title)}" loading="lazy"></a><h3>${esc(f.title)}</h3><div class="meta">${esc(f.description)}</div><a class="more" href="${esc(w[4])}" target="_blank" rel="noopener noreferrer">view publication ↗</a></article>`;
           }).join('')}
         </div>
         <div class="link-strip">
@@ -163,14 +163,14 @@ function newsPage() {
 
 function photoCard(photo, variant = '') {
   const extra = variant ? ` ${variant}-photo-card` : '';
-  return `<article class="photo-card${extra}"><img src="assets/${photo.src}" alt="${esc(photo.alt)}" loading="lazy"><div class="photo-copy"><h3>${esc(photo.title)}</h3><p class="meta">${esc(photo.note)}</p></div></article>`;
+  return `<article class="photo-card${extra}"><img src="${photo.src}" alt="${esc(photo.alt)}" loading="lazy"><div class="photo-copy"><h3>${esc(photo.title)}</h3><p class="meta">${esc(photo.note)}</p></div></article>`;
 }
 
 function about() {
   return section('About', `
     <div class="about-top">
       <figure class="about-portrait-main">
-        <img src="assets/author-bw-clean.jpg" alt="Black-and-white author portrait of daniel barrios leaning against a hallway wall." loading="lazy">
+        <img src="author-bw-clean.jpg" alt="Black-and-white author portrait of daniel barrios leaning against a hallway wall." loading="lazy">
       </figure>
       <div class="bio">${biography}</div>
     </div>

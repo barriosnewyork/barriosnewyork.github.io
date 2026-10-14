@@ -26,7 +26,7 @@ img{max-width:100%;display:block}
   transition:opacity .55s ease,visibility .55s ease
 }
 .entrance.dismissed{opacity:0;visibility:hidden;pointer-events:none}
-.entrance-photo{position:absolute;inset:0;background:linear-gradient(115deg,rgba(18,48,31,.42),rgba(27,53,24,.25)),url('assets/rooster-hero.jpg') 50% 46%/cover no-repeat,linear-gradient(145deg,#8e6543,#395e40 48%,#bd8a4c)}
+.entrance-photo{position:absolute;inset:0;background:linear-gradient(115deg,rgba(18,48,31,.42),rgba(27,53,24,.25)),url('rooster-hero.jpg') 50% 46%/cover no-repeat,linear-gradient(145deg,#8e6543,#395e40 48%,#bd8a4c)}
 .entrance-grain{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 13px,rgba(0,0,0,.025) 14px 15px);opacity:.6}
 .entrance-content{position:relative;text-align:center;padding:25px;text-shadow:0 2px 15px #24362480}
 .entrance h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,7.5vw,7.8rem);font-weight:400;letter-spacing:-.06em;line-height:1.1;margin:15px 0 32px}
