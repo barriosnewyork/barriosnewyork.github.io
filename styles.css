@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --cream:#f5ecd9;
+  --paper:#fffaf0;
+  --ink:#263824;
+  --green:#286741;
+  --red:#a84536;
+  --ochre:#d0a04c;
+  --line:#d7cbb1;
+  --muted:#635e51;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+a:hover{color:var(--red)}
+img{max-width:100%;display:block}
+
+.entrance{
+  height:100svh;min-height:560px;position:fixed;inset:0;z-index:100;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;background:#385c38;color:#fff9e7;
+  transition:opacity .55s ease,visibility .55s ease
+}
+.entrance.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+.entrance-photo{position:absolute;inset:0;background:linear-gradient(115deg,rgba(18,48,31,.42),rgba(27,53,24,.25)),url('assets/rooster-hero.jpg') 50% 46%/cover no-repeat,linear-gradient(145deg,#8e6543,#395e40 48%,#bd8a4c)}
+.entrance-grain{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 13px,rgba(0,0,0,.025) 14px 15px);opacity:.6}
+.entrance-content{position:relative;text-align:center;padding:25px;text-shadow:0 2px 15px #24362480}
+.entrance h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,7.5vw,7.8rem);font-weight:400;letter-spacing:-.06em;line-height:1.1;margin:15px 0 32px}
+.enter-button{cursor:pointer;border:1px solid #fff7e6;background:#fff7e6;color:#294c31;border-radius:1px;padding:15px 44px;text-transform:uppercase;letter-spacing:.23em;font-size:.77rem;font-weight:700;transition:transform .2s,background .2s}
+.enter-button:hover{transform:translateY(-3px);background:#eac78f}
+
+.site-header{padding:19px 5.5%;display:flex;align-items:center;gap:25px;justify-content:space-between;background:var(--cream);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+.wordmark{font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;letter-spacing:-.045em;text-decoration:none;white-space:nowrap}
+.wordmark-dot{color:var(--red)}
+nav{display:flex;flex-wrap:wrap;gap:17px}
+nav a{text-decoration:none;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700}
+nav a.active{color:var(--red);text-decoration:underline;text-underline-offset:7px}
+.menu-toggle{display:none;background:none;border:0;color:var(--ink)}
+main{min-height:68vh}
+
+.shell{max-width:1130px;margin:0 auto;padding:75px 32px 110px}
+.page-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.9rem,7vw,5.4rem);font-weight:400;letter-spacing:-.06em;line-height:1.12;margin:0 0 25px}
+.intro{font-size:1.05rem;line-height:1.85;max-width:770px;color:#4a4a3b}
+.rule{height:1px;background:var(--line);margin:60px 0}
+.section-title{font-family:'Libre Baskerville',Georgia,serif;font-weight:400;letter-spacing:-.04em;font-size:clamp(2rem,4vw,3.1rem);margin:0 0 28px}
+.kicker{text-transform:uppercase;color:var(--red);font-size:.76rem;letter-spacing:.18em;font-weight:700}
+
+.home-hero{padding:85px 0 65px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px}
+.hero-with-photo{align-items:start}
+.home-portrait-card{margin:0;background:#fff8eb;border:1px solid var(--line);padding:14px;box-shadow:0 10px 28px rgba(70,56,30,.08)}
+.home-portrait-card img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top}
+.arrow-link{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:.76rem;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:8px}
+
+.featured-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:45px 30px}
+.featured-card img{width:100%;aspect-ratio:1.55/1;object-fit:cover;background:#e3ddce}
+.featured-card h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.55rem;line-height:1.4;margin:18px 0 7px;font-weight:400}
+.featured-card .meta,.entry .meta,.photo-copy .meta{color:var(--muted);font-size:.92rem;line-height:1.6}
+.featured-card a.more{font-size:.78rem;display:inline-block;margin-top:12px;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.link-strip{display:flex;flex-wrap:wrap;gap:24px;margin-top:44px}
+
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.news-card{border-top:3px solid var(--green);background:#fff9ed;padding:24px;min-height:190px}
+.news-card h3{font-family:'Libre Baskerville',Georgia,serif;font-weight:400;line-height:1.5}
+.news-card a{font-size:.82rem}
+
+.entry{padding:21px 0;border-bottom:1px solid var(--line)}
+.entry h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.14rem;font-weight:400;margin:0 0 8px;line-height:1.5}
+.entry a{text-decoration-thickness:1px;text-underline-offset:4px}
+.small-note{color:var(--red);font-size:.83rem}
+.anchor-nav{display:flex;gap:22px;flex-wrap:wrap;margin:28px 0 65px}
+.anchor-nav a{font-size:.83rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.genre{scroll-margin-top:110px;margin:55px 0 70px}
+.genre h2{font-family:'Libre Baskerville',Georgia,serif;font-size:2.4rem;font-weight:400;border-bottom:2px solid var(--green);padding-bottom:15px}
+.bio{max-width:850px;line-height:1.95;font-size:1.08rem}
+.bio p{margin-bottom:23px}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.info-list{padding-left:20px;line-height:2}
+.info-list li{padding-bottom:5px}
+.book-panel{border:1px solid var(--line);padding:55px;background:#fff9ed;max-width:780px}
+.book-panel h2{font-family:'Libre Baskerville',Georgia,serif;font-size:3rem;font-weight:400}
+.contact-form{max-width:720px;display:grid;gap:18px}
+.contact-form label{display:grid;gap:9px;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.contact-form input,.contact-form textarea{border:1px solid #baab90;padding:14px;background:#fffaf0;color:var(--ink);border-radius:0}
+.contact-form button{padding:16px 28px;color:#fff;background:var(--green);border:0;width:max-content}
+.form-note{font-size:.85rem;color:var(--muted);max-width:650px;line-height:1.6}
+.footer{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;border-top:1px solid var(--line);padding:30px 5.5%;font-size:.78rem}
+.footer div{display:flex;gap:18px}
+.footer button{padding:0;border:0;background:none;color:var(--ink);cursor:pointer;text-decoration:underline}
+.footer a{text-decoration:none}
+.teaching-line{display:grid;grid-template-columns:1fr auto;gap:10px}
+.divider-accent{height:6px;background:linear-gradient(to right,var(--green) 0 50%,var(--red) 50% 75%,var(--ochre) 75%)}
+
+.about-top{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:40px;align-items:start}
+.about-portrait-main{margin:0;background:#fff8eb;padding:14px;border:1px solid var(--line);box-shadow:0 10px 28px rgba(70,56,30,.08)}
+.about-portrait-main img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%}
+.swipe-gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,32vw);gap:20px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}
+.swipe-gallery::-webkit-scrollbar{height:10px}
+.swipe-gallery::-webkit-scrollbar-thumb{background:rgba(80,65,40,.28);border-radius:999px}
+.photo-card{background:#fff8eb;border:1px solid var(--line);scroll-snap-align:start}
+.photo-card img{width:100%;height:min(60vh,520px);object-fit:cover;object-position:center}
+.featured-photo-card{grid-column:auto}
+.featured-photo-card img{height:min(62vh,560px);object-fit:contain;object-position:center;background:#efe6d4}
+.swipe-photo-card img{height:min(52vh,430px)}
+.photo-copy{padding:16px 16px 18px}
+.photo-copy h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.25rem;font-weight:400;margin:0 0 8px;text-transform:lowercase}
+
+
+@media(max-width:900px){
+  .swipe-gallery{grid-auto-columns:minmax(250px,82vw)}
+  .featured-photo-card img,.swipe-photo-card img{height:auto;max-height:none;aspect-ratio:auto}
+}
+
+:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+
+@media(max-width:900px){
+  .about-top,.home-hero,.featured-grid,.columns,.news-grid{grid-template-columns:1fr}
+  .about-portrait-main{max-width:440px}
+}
+
+@media(max-width:800px){
+  .menu-toggle{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .shell{padding:52px 20px 75px}
+  .book-panel{padding:27px}
+  .teaching-line{display:block}
+  .site-header{padding:17px 20px}
+  .footer{padding:30px 20px}
+  .entrance h1{font-size:clamp(2.8rem,12vw,4.8rem)}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.entrance,.enter-button{transition:none}}
+
+/* Keep the photographed rooster in view across screen sizes. */
+@media (min-aspect-ratio: 4/3){.entrance-photo{background-position:center,50% 42%,center}}
+@media (max-aspect-ratio: 3/4){.entrance-photo{background-position:center,47% 45%,center}}
